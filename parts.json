@@ -1,0 +1,20 @@
+{
+	"LM319N": {
+		"package": "dip-14",
+		"pins": [
+			"NC", "NC", "GND1", "IN(+)", "IN(-)", "VEE", "OUTPUT2", 
+			"GND2", "IN2(+)", "IN2(-)", "VCC", "OUTPUT1", "NC", "NC"
+		]
+	},
+	
+	"ATMEGA328": {
+		"package": "dip-28",
+		"pins": [
+			"PC6", "PD0", "PD1", "PD2", "PD3", "PD4", "VCC", "GND", "PB6", "PB7", "PD5", "PD6", "PD7", "PB0",
+			"PB1", "PB2", "PB3", "PB4", "PB5", "AVCC", "AREF", "GND", "PC0", "PC1", "PC2", "PC3", "PC4", "PC5"
+		]
+	}
+
+
+
+}

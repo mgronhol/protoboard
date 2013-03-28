@@ -1,0 +1,32 @@
+{
+	"dip-8": {
+		"pins": 8,
+		"width": 4
+		},
+	
+	"dip-14": {
+		"pins": 14,
+		"width": 4
+		},
+	
+	"dip-28": {
+		"pins": 8,
+		"width": 4
+		},
+
+	"xtal":{
+		"pins": 2,
+		"width": 4
+	},
+
+	"two-teminal":{
+		"pins": 2,
+		"width": 2
+	},
+
+	"three-teminal":{
+		"pins": 3,
+		"width": 3
+	}
+
+}

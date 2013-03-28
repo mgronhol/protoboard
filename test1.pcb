@@ -1,0 +1,18 @@
+board proto-small
+
+# komparaattori
+part comp1 LM319N 4 4 W
+
+
+# jotain johtoja
+wire 1 1 comp1.1
+wire 1 1 comp1.8
+wire 1 1 comp1.9
+wire 1 2 1 10
+
+resistor 1 13 4 12
+capacitor 5 13 11 12
+ 
+wire 4 12 5 13
+
+wire 11 12 comp1.7
