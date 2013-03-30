@@ -85,7 +85,7 @@ class Part( object ):
 			
 			for i in range( N ):
 				px = 32 + self.x * 32 + i*32
-				py = 32 + self.x * 32
+				py = 32 + self.y * 32
 				self.pins[N - i] = (px, py)
 			
 			for i in range( N ):
@@ -102,7 +102,7 @@ class Part( object ):
 			
 			for i in range( N ):
 				px = 32 + self.x * 32 + i*32
-				py = 32 + self.x * 32
+				py = 32 + self.y * 32
 				self.pins[2*N - i] = (px, py)
 			
 			for i in range( N ):
