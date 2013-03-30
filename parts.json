@@ -4,7 +4,9 @@
 		"pins": [
 			"NC", "NC", "GND1", "IN(+)", "IN(-)", "VEE", "OUTPUT2", 
 			"GND2", "IN2(+)", "IN2(-)", "VCC", "OUTPUT1", "NC", "NC"
-		]
+		],
+		"description": "Dual comparator",
+		"datasheet": ""
 	},
 	
 	"ATMEGA328": {
@@ -12,8 +14,410 @@
 		"pins": [
 			"PC6", "PD0", "PD1", "PD2", "PD3", "PD4", "VCC", "GND", "PB6", "PB7", "PD5", "PD6", "PD7", "PB0",
 			"PB1", "PB2", "PB3", "PB4", "PB5", "AVCC", "AREF", "GND", "PC0", "PC1", "PC2", "PC3", "PC4", "PC5"
-		]
+		],
+		"description": "Atmel microcontroller",
+		"datasheet": ""
+	},
+	
+	"74HCT132": {
+		"package": "dip-14",
+		"pins": [
+			"1A", "1B", "1Y", "2A", "2B", "2Y", "GND", "3Y", "3A", "3B", "4Y", "4A", "4B", "VCC"
+		],
+		"descriptions": "Quad 2-input NAND Schmitt trigger",
+		"datasheet":""
+	},
+	
+	"CD4096BC": {
+		"package": "dip-16",
+		"pins": [
+			"STROBE", "DATA", "CLK", "Q1", "Q2", "Q3", "Q4", "VSS", "QS", "Q'S", "Q8", "Q7", "Q6", "Q5", "OEN", "VDD" 
+		],
+		"descriptions": "8-Bit Shift Register",
+		"datasheet": ""
+	},
+	
+	"LM7805": {
+		"package": "generic-three-terminal",
+		"pins": ["INPUT", "GND", "OUTPUT" ],
+		"description": "5V regulator",
+		"datasheet": ""
+	},
+	
+	"SN74HC165": {
+		"package": "dip-16",
+		"pins": [
+			"SH/LD", "CLK", "E", "F", "G", "H", "QH", "GND", "QH", "SER", "A", "B", "C", "D", "CLK INH", "VCC" 
+			],
+		"description": "8-Bit Load Register",
+		"datasheet": ""
+	},
+	
+	"ICL7673": {
+		"package": "dip-8",
+		"pins": [
+			"VO", "VS", "SBAR", "GND", "NC", "PBAR", "NC", "VP"
+			],
+		"description": "Automatic Battery Back-Up Switch",
+		"datasheet": ""
+	},
+
+	"TIL193": {
+		"package": "dip-16",
+		"pins": [
+			"1AN", "1CA", "2AN", "2CA", "3AN", "3CA", "4AN", "4CA", "4EM", "4CO", "3EM", "3CO", "2EM", "2CO", "1EM", "1CO"
+			],
+		"description": "Quad Optoisolator",
+		"datasheet": ""
+	},
+	
+	"ULN2803A": {
+		"package": "dip-18",
+		"pins": [
+			"1B", "2B", "3B", "4B", "5B", "6B", "7B", "8B", "COM", "8C", "7C", "6C", "5C", "4C", "3C", "2C", "1C"
+			],
+		"description": "Darlington Transistor Array",
+		"datasheet": ""
+	},
+	
+	"MCP4821": {
+		"package": "dip-8",
+		"pins": [
+			"VDD", "CS", "SCK", "SDI", "LDAC", "SHDN", "AVSS", "VOUT"
+			],
+		"description": "12-Bit DA converter, SPI",
+		"datasheet": ""
+	},
+	
+	"LM318N": {
+		"package": "dip-8",
+		"pins": [
+			"BAL/COMP-1", "IN(-)", "IN(+)", "V-", "BAL/COMP-3", "OUTPUT", "V+", "COMP-2"
+			],
+		"description": "Operational Amplifier, 15 MHz bandwidth",
+		"datasheet": ""
+		
+	},
+	
+	"LM833N": {
+		"package": "dip-8",
+		"pins": [
+			"OUTA", "INA(-)", "INA(+)", "VEE", "INB(+)", "INB(-)", "OUTB", "VCC"
+			],
+		"description": "Dual Audio Operational Amplifier",
+		"datasheet": ""
+	},
+	
+	"74AC00": {
+		"package": "dip-14",
+		"pins": [
+			"A0", "B0", "O0", "A1", "B1", "O1", "GND", "O3", "B3", "A3", "O2", "B2", "A", "VCC"
+			],
+		"description": "Quad 2-Input NAND Gate",
+		"datasheet": ""
+	},
+	
+	"74HC4049": {
+		"package": "dip-16",
+		"pins": [
+			"VCC", "1Y", "1A", "1B", "2Y", "2A", "3Y", "3A", "GND", "4A", "4Y", "5A", "5Y", "NC", "6A", "6Y", "NC"
+			],
+		"description": "Hex Inverter",
+		"datasheet": ""
+	},
+	
+	"74HC85": {
+		"package": "dip-16",
+		"pins": [
+			"B3", "IA<B", "IA=B", "IA>B", "QA>B", "QA=B", "QA<B", "GND", "B0", "A0", "B1", "A1", "A2", "B2", "A3", "VCC"
+			],
+		"description": "4-bit magnitude comparator",
+		"datasheet": ""
+	},
+
+	"ATTINY84": {
+		"package": "dip-14",
+		"pins": [
+			"VCC", "PB0", "PB1", "PB3", "PB2", "PA7", "PA6", "PA5", "PA4", "PA3", "PA2", "PA1", "PA0", "GND"
+			],
+		"description": "Atmel microcontroller",
+		"datasheet": ""
+	},
+
+	"2N5886": {
+		"package": "generic-three-terminal",
+		"pins": [
+				"B", "E", "C"
+			],
+		"description": "NPN Power Transistor",
+		"datasheet": ""
+	},
+
+	"MC14512": {
+		"package": "dip-16",
+		"pins": [
+			"X0", "X1", "X2", "X3", "X4", "X5", "X6", "VSS", "X7", "INH", "A", "B", "C", "Z", "DISABLE", "VDD"
+			],
+		"description": "8-channel Data Selector",
+		"datasheet": ""
+	},
+
+	"2N2905A": {
+		"package": "generic-three-terminal",
+		"pins": [
+				"B", "C", "E"
+			],
+		"description": "PNP Small Signal Transistor",
+		"datasheet": ""
+	},
+
+	"MCP6002": {
+		"package": "dip-8",
+		"pins": [
+			"OUTA", "INA(-)", "INA(+)", "VSS", "INB(+)", "INB(-)", "OUTB", "VDD"
+			],
+		"description": "Low-Power Op Amp, 1 MHz",
+		"datasheet": ""
+	},
+
+	"MCP2036": {
+		"package": "dip-14",
+		"pins": [
+			"VREF", "LREF", "LBTN", "VDD", "DRVOUT", "DRVIN", "CLK", "REFSEL", "CS", "ISOL", "VSS", "DETOUT", "DET(-)", "DET(+)"
+			],
+		"description": "Inductive Sensor Analog Front End Device",
+		"datasheet": ""
+	},
+	
+	"DS1804": {
+		"package": "dip-8",
+		"pins": [
+			"INC", "U/D", "H", "GND", "W", "L", "CS", "VCC"
+			],
+		"description": "NV Trimmer Potentiometer",
+		"datasheet": ""
+	},
+	
+	"SFH300": {
+		"package": "generic-two-terminal",
+		"pins": [
+			"C", "E"
+			],
+		"description": "NPN Silicon Phototransistor",
+		"datasheet": ""
+	},
+	
+	"MC7800": {
+		"package": "generic-three-terminal",
+		"pins": [
+			"INPUT", "GND", "OUTPUT"
+			],
+		"description": "5V 1.0A Regulator",
+		"datasheet": ""
+	},
+	
+	"ACPL827": {
+		"package": "dip-8",
+		"pins": [
+			"1AN", "2CA", "2AN", "2CA", "2EM", "2CO", "1EM", "1CO"
+			],
+		"description": "Dual Optoisolator",
+		"datasheet": ""
+	},
+	
+	"MSP430G2232": {
+		"package": "dip-20",
+		"pins": [
+				"VCC", "P1.0", "P1.1", "P1.2", "P1.3", "P1.4", "P1.5", "P2.0", "P2.1", "P2.2", "P2.3", "P2.4", "P2.5", "P1.6", "P1.7", "RST", "TEST", "P2.7 / XOUT", "P2.6 / XIN", "VSS"
+			],
+		"description": "TI Mixed Signal Microcontroller",
+		"datasheet": ""
+	},
+
+	"LM324": {
+		"package": "dip-14",
+		"pins": [
+			"OUT1", "IN1(-)", "IN1(+)", "VCC", "IN2(+)", "IN2(-)", "OUT2", "3OUT", "IN3(-)", "IN3(+)", "GND", "IN4(+)", "IN4(-)", "OUT4"
+			],
+		"description": "Quad Operational Amplifier",
+		"datasheet": ""
+	},
+
+	"MC36192": {
+		"package": "generic-two-terminal",
+		"pins": [
+			" ", " "
+			],
+		"description": "PTC Resettable Fuse, 500 mA",
+		"datasheet": ""
+	},
+
+	"A25L040": {
+		"package": "dip-8",
+		"pins": [
+			"S", "DO", "W", "VSS", "DIO", "C", "HOLD", "VCC"
+			],
+		"description": "4 MBit Serial Flash Memory, SPI",
+		"datasheet": ""
+	},
+
+	"AD847": {
+		"package": "dip-8",
+		"pins": [
+			"NC", "IN(-)", "IN(+)", "VS", "NC", "OUTPUT", "VS", "NC"
+			],
+		"description": "Single Operational Amplifier",
+		"datasheet": ""
+	},
+
+	"ADM1232A": {
+		"package": "dip-8",
+		"pins": [
+			"PB RST", "TD", "TOLERANCE", "GND", "RST", "RST", "STROBE", "VCC"
+			],
+		"description": "Microprocessor Supervisory Circuit",
+		"datasheet": ""
+	},
+
+	"BS170": {
+		"package": "generic-three-terminal",
+		"pins": [
+			"D", "G", "S"
+			],
+		"description": "N-channel FET",
+		"datasheet": ""
+	},
+
+	"L4941": {
+		"package": "generic-three-terminal",
+		"pins": [
+			"INPUT", "GND", "OUTPUT"
+			],
+		"description": "Very Low Drop 5V Regulator",
+		"datasheet": ""
+	},
+
+	"CA3130": {
+		"package": "dip-8",
+		"pins": [
+			"OFFSET", "IN(-)", "IN(+)", "V-", "OFFSET", "OUTPUT", "V+", "STROBE" 
+			],
+		"description": "15MHz, BiMOS Operational Amplifier",
+		"datasheet": ""
+	},
+
+	"LF353": {
+		"package": "dip-8",
+		"pins": [
+			"OUTA", "INA(-)", "INA(+)", "V-", "INB(+)", "INB(-)", "OUTB", "V+"
+			],
+		"description": "JFET Dual Operational Amplifier",
+		"datasheet": ""
+	},
+
+	"LM239N": {
+		"package": "dip-14",
+		"pins": [
+			"OUT2", "OUT1", "V+", "IN1(-)", "IN1(+)", "IN2(-)", "IN2(+)", "IN3(-)", "IN3(+)", "IN4(-)", "IN4(+)", "GND", "OUT4", "OUT3"
+			],
+		"description": "Quad Comparator",
+		"datasheet": ""
+	},
+
+	"LT1014D": {
+		"package": "dip-16",
+		"pins": [
+			"OUT1", "IN1(-)", "IN1(+)", "VCC", "IN2(+)", "IN2(-)", "OUT2", "NC", "NC", "OUT3", "IN3(-)", "IN3(+)", "GND", "IN4(+)", "IN4(-)", "OUT4"
+			],
+		"description": "Quad Operational Amplifier, Single-Supply",
+		"datasheet": ""
+	},
+
+	"2N3019": {
+		"package": "generic-two-terminal",
+		"pins": [
+			"B", "C", "E"
+			],
+		"description": "NPN High Frequency Transistor",
+		"datasheet": ""
+	},
+
+	"NE555": {
+		"package": "dip-8",
+		"pins": [
+			"GND", "TRIGGER", "OUTPUT", "RST", "CTRL", "THRESH", "DISCHRG", "VCC"
+			],
+		"description": "555 Timer Chip",
+		"datasheet": ""
+	},
+
+	"OP07": {
+		"package": "dip-8",
+		"pins": [
+			"TRIM", "IN(-)", "IN(+)", "V-", "NC", "OUT", "V+", "TRIM"
+			],
+		"description": "High Precision Operational Amplifier ",
+		"datasheet": ""
+	},
+
+
+	"OP27": {
+		"package": "dip-8",
+		"pins": [
+			"TRIM", "IN(-)", "IN(+)", "V-", "NC", "OUT", "V+", "TRIM"
+			],
+		"description": "Low Noise Operational Amplifier",
+		"datasheet": ""
+	},
+
+	"OPA827": {
+		"package": "dip-8",
+		"pins": [
+			"NC", "IN(-)", "IN(+)", "V-", "NC", "OUT", "V+", "NC"		
+			],
+		"description": "JFET Low Noise Operational Amplifier",
+		"datasheet": ""
+	},
+
+	"SN75179B": {
+		"package": "dip-8",
+		"pins": [
+			"VCC", "R", "D", "GND", "Y", "Z", "B", "A"
+			],
+		"description": "RS422 Driver-Receiver",
+		"datasheet": ""
+	},
+	
+	"SN75179B": {
+		"package": "dip-16",
+		"pins": [
+			"QL", "QF", "QE", "QG", "QD", "QC", "QB", "GND", "QA", "CLK", "CLR", "QI", "QH", "QJ", "QK", "VCC"
+			],
+		"description": "12-Bit Asynchronous counter",
+		"datasheet": ""
+	},
+	
+	"LF351": {
+		"package": "dip-8",
+		"pins": [
+			"BALANCE", "IN(-)", "IN(+)", "V-", "BALANCE", "OUTPUT", "V+", "NC"
+			],
+		"description": "JFET Single Operational Amplifier",
+		"datasheet": ""
+	},
+	
+	
+	
+	
+	"": {
+		"package": "",
+		"pins": [
+		
+			],
+		"description": "",
+		"datasheet": ""
 	}
+
 
 
 

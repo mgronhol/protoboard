@@ -8,6 +8,21 @@
 		"pins": 14,
 		"width": 4
 		},
+
+	"dip-16": {
+		"pins": 16,
+		"width": 4
+		},
+
+	"dip-18": {
+		"pins": 16,
+		"width": 4
+		},
+
+	"dip-20": {
+		"pins": 20,
+		"width": 4
+		},
 	
 	"dip-28": {
 		"pins": 8,
@@ -17,16 +32,16 @@
 	"xtal":{
 		"pins": 2,
 		"width": 4
-	},
+		},
 
-	"two-teminal":{
+	"generic-two-teminal":{
 		"pins": 2,
 		"width": 2
-	},
+		},
 
-	"three-teminal":{
+	"generic-three-teminal":{
 		"pins": 3,
 		"width": 3
-	}
+		}
 
 }
