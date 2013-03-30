@@ -406,6 +406,14 @@
 		"datasheet": ""
 	},
 	
+	"XTAL": {
+		"package": "xtal",
+		"pins": [
+			" ", " "
+			],
+		"description": "Crystal",
+		"datasheet": ""
+	},
 	
 	
 	

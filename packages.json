@@ -25,13 +25,13 @@
 		},
 	
 	"dip-28": {
-		"pins": 8,
+		"pins": 28,
 		"width": 4
 		},
 
 	"xtal":{
 		"pins": 2,
-		"width": 4
+		"width": 3
 		},
 
 	"generic-two-teminal":{

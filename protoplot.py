@@ -324,16 +324,23 @@ for line in lines:
 			pin = int(pin)
 			part = symbols[key]
 			start = part.pins[pin]
-
-		if line[3].isdigit():
-			x = 32 + (int( line[3] )-1)*32
-			y = 32 + (int( line[4] )-1)*32
-			stop = [x,y]
-		else:
-			(key, pin) = line[3].split(".")
+		
+		if not line[1].isdigit() and not line[2].isdigit():
+			(key, pin) = line[2].split(".")
 			pin = int(pin)
 			part = symbols[key]
 			stop = part.pins[pin]
+		else:
+			if line[3].isdigit():
+				x = 32 + (int( line[3] )-1)*32
+				y = 32 + (int( line[4] )-1)*32
+				stop = [x,y]
+			else:
+				(key, pin) = line[3].split(".")
+				pin = int(pin)
+				part = symbols[key]
+				stop = part.pins[pin]
+				
 
 		draw_hole( ctx, tuple( start ) )
 		draw_hole( ctx, tuple( stop ) )
