@@ -232,7 +232,23 @@ class Part( object ):
 				ctx.show_text( self.part["pins"][i + N] )
 				ctx.stroke()
 				ctx.restore()
-				
+
+def parse_line( symbols, line ):
+	out = []
+	for value in line:
+		if value.isdigit():
+			out.append( 32 + 32*int( value ) )
+		else:
+			(key, pin) = value.split( "." )
+			pin = int(pin)
+			part = symbols[key]
+			out.extend( list( part.pins[pin] ) )
+	
+	pairs = []
+	for i in range( 0, len( out ), 2 ):
+		pairs.append( (out[i], out[i+1]) )
+	return pairs
+	
 				
 
 fname = sys.argv[1]
@@ -312,35 +328,8 @@ for line in lines:
 		symbols[ line[1] ].draw( ctx )
 
 	elif line[0] == "wire":
-		start = []
-		stop = []
+		(start, stop) = parse_line( symbols, line[1:] )
 		
-		if line[1].isdigit():
-			x = 32 + (int( line[1] )-1)*32
-			y = 32 + (int( line[2] )-1)*32
-			start = [x,y]
-		else:
-			(key, pin) = line[1].split(".")
-			pin = int(pin)
-			part = symbols[key]
-			start = part.pins[pin]
-		
-		if not line[1].isdigit() and not line[2].isdigit():
-			(key, pin) = line[2].split(".")
-			pin = int(pin)
-			part = symbols[key]
-			stop = part.pins[pin]
-		else:
-			if line[3].isdigit():
-				x = 32 + (int( line[3] )-1)*32
-				y = 32 + (int( line[4] )-1)*32
-				stop = [x,y]
-			else:
-				(key, pin) = line[3].split(".")
-				pin = int(pin)
-				part = symbols[key]
-				stop = part.pins[pin]
-				
 
 		draw_hole( ctx, tuple( start ) )
 		draw_hole( ctx, tuple( stop ) )
@@ -352,38 +341,13 @@ for line in lines:
 		ctx.stroke()
 
 	elif line[0] == "resistor":
-		start = []
-		stop = []
+
+		(start, stop) = parse_line( symbols, line[1:] )
 		
-		if line[1].isdigit():
-			x = 32 + (int( line[1] )-1)*32
-			y = 32 + (int( line[2] )-1)*32
-			start = [x,y]
-		else:
-			(key, pin) = line[1].split(".")
-			pin = int(pin)
-			part = symbols[key]
-			start = part.pins[pin]
-
-		if line[3].isdigit():
-			x = 32 + (int( line[3] )-1)*32
-			y = 32 + (int( line[4] )-1)*32
-			stop = [x,y]
-		else:
-			(key, pin) = line[3].split(".")
-			pin = int(pin)
-			part = symbols[key]
-			stop = part.pins[pin]
-
 		draw_hole( ctx, tuple( start ) )
 		draw_hole( ctx, tuple( stop ) )
 		
 
-		#ctx.set_source_rgb( 0, 0, 1 )
-		#ctx.move_to( *start )
-		#ctx.line_to( *stop )
-		#ctx.stroke()
-		
 		dx = stop[0] - start[0]
 		dy = stop[1] - start[1]
 		
@@ -434,28 +398,7 @@ for line in lines:
 		ctx.stroke()
 
 	elif line[0] == "capacitor":
-		start = []
-		stop = []
-		
-		if line[1].isdigit():
-			x = 32 + (int( line[1] )-1)*32
-			y = 32 + (int( line[2] )-1)*32
-			start = [x,y]
-		else:
-			(key, pin) = line[1].split(".")
-			pin = int(pin)
-			part = symbols[key]
-			start = part.pins[pin]
-
-		if line[3].isdigit():
-			x = 32 + (int( line[3] )-1)*32
-			y = 32 + (int( line[4] )-1)*32
-			stop = [x,y]
-		else:
-			(key, pin) = line[3].split(".")
-			pin = int(pin)
-			part = symbols[key]
-			stop = part.pins[pin]
+		(start, stop) = parse_line( symbols, line[1:] )
 
 		draw_hole( ctx, tuple( start ) )
 		draw_hole( ctx, tuple( stop ) )
@@ -480,7 +423,7 @@ for line in lines:
 		r_1 = ( midpoint[0] + 10*ndx, midpoint[1] + 10*ndy )
 		
 		
-		ctx.set_source_rgb( 0, 1, 0 )
+		ctx.set_source_rgb( 0, 0.7, 0 )
 		
 		ctx.move_to( *start )
 		ctx.line_to( *r_0 )
@@ -493,15 +436,15 @@ for line in lines:
 		normx = -ndy
 		normy = ndx
 		
-		r_00 = ( r_0[0] + normx*32, r_0[1] + normy*32 )
-		r_01 = ( r_0[0] - normx*32, r_0[1] - normy*32 )	
+		r_00 = ( r_0[0] + normx*30, r_0[1] + normy*30 )
+		r_01 = ( r_0[0] - normx*30, r_0[1] - normy*30 )	
 		
 		ctx.move_to( *r_00 )
 		ctx.line_to( *r_01 )
 		ctx.stroke()
 		
-		r_10 = ( r_1[0] + normx*32, r_1[1] + normy*32 )
-		r_11 = ( r_1[0] - normx*32, r_1[1] - normy*32 )	
+		r_10 = ( r_1[0] + normx*30, r_1[1] + normy*30 )
+		r_11 = ( r_1[0] - normx*30, r_1[1] - normy*30 )	
 		
 		ctx.move_to( *r_10 )
 		ctx.line_to( *r_11 )

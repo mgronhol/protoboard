@@ -12,7 +12,7 @@
 	"ATMEGA328": {
 		"package": "dip-28",
 		"pins": [
-			"PC6", "PD0", "PD1", "PD2", "PD3", "PD4", "VCC", "GND", "PB6", "PB7", "PD5", "PD6", "PD7", "PB0",
+			"RST", "PD0", "PD1", "PD2", "PD3", "PD4", "VCC", "GND", "PB6", "PB7", "PD5", "PD6", "PD7", "PB0",
 			"PB1", "PB2", "PB3", "PB4", "PB5", "AVCC", "AREF", "GND", "PC0", "PC1", "PC2", "PC3", "PC4", "PC5"
 		],
 		"description": "Atmel microcontroller",
@@ -415,6 +415,16 @@
 		"datasheet": ""
 	},
 	
+
+	"FTDI-HEADER": {
+		"package": "header-1x6",
+		"pins": [
+			"DTR", "RXI", "TXO", "5V", "CTS", "GND"
+			],
+		"description": "FTDI usb-board header",
+		"datasheet": ""
+	},
+
 	
 	
 	"": {
