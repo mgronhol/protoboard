@@ -1,4 +1,9 @@
 {
+	"dip-6": {
+		"pins": 6,
+		"width": 4
+	},
+	
 	"dip-8": {
 		"pins": 8,
 		"width": 4
@@ -46,12 +51,13 @@
 	
 	"header-1x6": {
 		"pins": 6,
-		"width": 6
+		"width": 1
 		},
 
 	"header-2x5": {
 		"pins": 10,
-		"width": 5
+		"width": 2
 		}
+	
 
 }

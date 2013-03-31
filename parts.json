@@ -12,8 +12,8 @@
 	"ATMEGA328": {
 		"package": "dip-28",
 		"pins": [
-			"RST", "PD0", "PD1", "PD2", "PD3", "PD4", "VCC", "GND", "PB6", "PB7", "PD5", "PD6", "PD7", "PB0",
-			"PB1", "PB2", "PB3", "PB4", "PB5", "AVCC", "AREF", "GND", "PC0", "PC1", "PC2", "PC3", "PC4", "PC5"
+			"RST", "RXD", "TXD", "PD2", "PD3", "PD4", "VCC", "GND", "PB6", "PB7", "PD5", "PD6", "PD7", "PB0",
+			"PB1", "PB2", "MOSI", "MISO", "SCK", "AVCC", "AREF", "GND", "PC0", "PC1", "PC2", "PC3", "PC4", "PC5"
 		],
 		"description": "Atmel microcontroller",
 		"datasheet": ""
@@ -24,7 +24,7 @@
 		"pins": [
 			"1A", "1B", "1Y", "2A", "2B", "2Y", "GND", "3Y", "3A", "3B", "4Y", "4A", "4B", "VCC"
 		],
-		"descriptions": "Quad 2-input NAND Schmitt trigger",
+		"description": "Quad 2-input NAND Schmitt trigger",
 		"datasheet":""
 	},
 	
@@ -33,7 +33,7 @@
 		"pins": [
 			"STROBE", "DATA", "CLK", "Q1", "Q2", "Q3", "Q4", "VSS", "QS", "Q'S", "Q8", "Q7", "Q6", "Q5", "OEN", "VDD" 
 		],
-		"descriptions": "8-Bit Shift Register",
+		"description": "8-Bit Shift Register",
 		"datasheet": ""
 	},
 	
@@ -415,6 +415,123 @@
 		"datasheet": ""
 	},
 	
+	"6N138": {
+		"package": "dip-8",
+		"pins": [
+			"NC", "IN(+)", "IN(-)", "NC", "GND", "VO", "VB", "VCC"
+			],
+		"description": "Single Darlington Optocoupler",
+		"datasheet": ""
+	},
+
+	"BYV32E": {
+		"package": "generic-three-terminal",
+		"pins": [
+			"A1", "K", "A2"
+			],
+		"description": "Dual rugged ultrafast rectifier diode",
+		"datasheet": ""
+	},
+
+	"L4940V5": {
+		"package": "generic-three-terminal",
+		"pins": [
+			"INPUT", "GND", "OUTPUT"
+			],
+		"description": "Very low drop 5V regulator",
+		"datasheet": ""
+	},
+
+	"HEF4053": {
+		"package": "dip-16",
+		"pins": [
+			"2Y1", "2Y0", "3Y1", "3Z", "3Y0", "E", "VEE", "VSS", "S3", "S2", "S1", "1Y0", "1Y1", "1Z", "2Z", "VDD"
+			],
+		"description": "Triple single-pole double-throw analog switch",
+		"datasheet": ""
+	},
+
+	"CD4009UB": {
+		"package": "dip-16",
+		"pins": [
+			"VCC", "G=A", "A", "H=B", "B", "I=C", "C", "VSS", "D", "J=D", "E", "K=E", "NC", "F", "L=F", "VDD"
+			],
+		"description": "Hex Inverter",
+		"datasheet": ""
+	},
+
+	"CD4093B": {
+		"package": "dip-16",
+		"pins": [
+			"A", "B", "J=AB", "K=CD", "C", "D", "VSS", "E", "F", "L=EF", "M=GH", "G", "H", "VDD"
+			],
+		"description": "Quad 2-Input NAND Schmitt Triggers",
+		"datasheet": ""
+	},
+
+	"HEF4030B": {
+		"package": "dip-16",
+		"pins": [
+			"I1", "I2", "O1", "O2", "I3", "I4", "VSS", "I5", "I6", "O3", "O4", "I7", "I8", "VDD"
+			],
+		"description": "Quad XOR Gate",
+		"datasheet": ""
+	},
+
+	"HEF4001B": {
+		"package": "dip-16",
+		"pins": [
+			"I1", "I2", "O1", "O2", "I3", "I4", "VSS", "I5", "I6", "O3", "O4", "I7", "I8", "VDD"
+			],
+		"description": "Quad 2-Input NOR Gate",
+		"datasheet": ""
+	},
+
+
+	"CD4011B": {
+		"package": "dip16",
+		"pins": [
+			"A", "B", "J=AB", "K=CD", "C", "D", "VSS", "E", "F", "L=EF", "M=GH", "G", "H", "VDD"
+			],
+		"description": "Quad 2-Input NAND Gate",
+		"datasheet": ""
+	},
+
+	"SN74LS00": {
+		"package": "dip-16",
+		"pins": [
+			"1A", "1B", "1Y", "VCC", "2Y", "2A", "2B", "3Y", "3A", "3B", "GND", "4A", "4B", "4Y"
+			],
+		"description": "Quad 2-Input NAND Gate",
+		"datasheet": ""
+	},
+
+	"4N26": {
+		"package": "dip-6",
+		"pins": [
+			"AN", "CA", "NC", "EM", "CO", "B"
+			],
+		"description": "Single Optocoupler",
+		"datasheet": ""
+	},
+
+	"SP481": {
+		"package": "dip-8",
+		"pins": [
+			"RO", "RE", "DE", "DI", "GND", "A", "B", "VCC"
+			],
+		"description": "Half-Duplex RS-485 Transreceiver",
+		"datasheet": ""
+	},
+
+	"ICSP-HEADER": {
+		"package": "header-2x5",
+		"pins": [
+			"MOSI", "NC", "RST", "SCK", "MISO", "GND", "GND", "GND", "GND", "5V"
+			],
+		"description": "Atmel ICSP Header",
+		"datasheet": ""
+	},
 
 	"FTDI-HEADER": {
 		"package": "header-1x6",
@@ -424,6 +541,23 @@
 		"description": "FTDI usb-board header",
 		"datasheet": ""
 	},
+
+
+
+
+
+
+
+
+	"": {
+		"package": "",
+		"pins": [
+		
+			],
+		"description": "",
+		"datasheet": ""
+	},
+
 
 	
 	

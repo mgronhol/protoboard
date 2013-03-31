@@ -39,6 +39,127 @@ class Part( object ):
 	def _compute_pins( self ):
 		N = self.package["pins"] / 2
 		
+		# special case, one row package
+		
+		if self.package["width"] == 1:
+			if self.orientation == "N":
+				self.notch = ( 32 + self.x * 32, 32 + self.y * 32 - 16 )
+				self.rect = ( 32 + self.x * 32 - 8 - 4, 
+						  32 + self.y * 32-16, 
+						  16 + 8, 32*N*2 )
+				
+				for i in range( self.package["pins"] ):
+					px = 32 + self.x * 32
+					py = 32 + self.y * 32 + i*32
+					self.pins[i + 1] = (px, py)
+			
+			elif self.orientation == "S":
+				self.notch = ( 32 + self.x * 32,  32 + self.y * 32 - 16 + self.package["pins"]*32 )
+				self.rect = ( 32 + self.x * 32 - 8 - 4, 
+						  32 + self.y * 32-16, 
+						  16 + 8, 32*N*2 )
+				
+				for i in range( self.package["pins"] ):
+					px = 32 + self.x * 32
+					py = 32 + self.y * 32 + 32*(self.package["pins"] -  i - 1)
+					self.pins[i + 1] = (px, py)
+			
+			elif self.orientation == "E":
+				self.notch = ( 32 + self.x * 32 + 32*N*2 - 16 + 4 ,  32 + self.y * 32 )
+				self.rect = ( 32 + self.x * 32 - 8 - 4, 
+						  32 + self.y * 32-16, 
+						  32*N*2,16 + 16 )
+				
+				for i in range( self.package["pins"] ):
+					px = 32 + self.x * 32 + 32*(self.package["pins"] -  i - 1)
+					py = 32 + self.y * 32
+					self.pins[i + 1] = (px, py)					
+
+			elif self.orientation == "W":
+				self.notch = ( 32 + self.x * 32 - 16 ,  32 + self.y * 32 )
+				self.rect = ( 32 + self.x * 32 - 8 - 8, 
+						  32 + self.y * 32-16, 
+						  32*N*2,16 + 16 )
+				
+				for i in range( self.package["pins"] ):
+					px = 32 + self.x * 32 + 32*(self.package["pins"] -  i - 1)
+					py = 32 + self.y * 32
+					self.pins[i + 1] = (px, py)					
+			
+			return
+
+
+		if self.package["width"] == 2:
+			if self.orientation == "N":
+				self.notch = ( 32 + self.x * 32 + 16, 32 + self.y * 32 - 16 )
+				self.rect = ( 32 + self.x * 32 - 8 - 4, 
+						  32 + self.y * 32-16, 
+						  16 + 8+32, 32*N )
+				
+				for i in range( N ):
+					px = 32 + self.x * 32
+					py = 32 + self.y * 32 + i*32
+					self.pins[i + 1] = (px, py)
+				
+				for i in range( N ):
+					px = 32 + self.x * 32+32
+					py = 32 + self.y * 32 + i*32
+					self.pins[i + 1+N	] = (px, py)
+
+			if self.orientation == "S":
+				self.notch = ( 32 + self.x * 32 + 16, 32 + self.y * 32 - 16 + N*32 )
+				self.rect = ( 32 + self.x * 32 - 8 - 4, 
+						  32 + self.y * 32-16, 
+						  16 + 8+32, 32*N )
+				
+				for i in range( N ):
+					px = 32 + self.x * 32
+					py = 32 + self.y * 32 + i*32
+					self.pins[i + N  + 1] = (px, py)
+				
+				for i in range( N ):
+					px = 32 + self.x * 32+32
+					py = 32 + self.y * 32 + i*32
+					self.pins[N - i] = (px, py)
+		
+			if self.orientation == "E":
+				self.notch = ( 32 + self.x * 32 + 32*N - 16 + 4 ,  32 + self.y * 32 + 16 )
+				self.rect = ( 32 + self.x * 32 - 8 - 4, 
+						  32 + self.y * 32-16, 
+						  32*N,16 + 16 + 32 )
+				
+				for i in range( N ):
+					px = 32 + self.x * 32 + i*32
+					py = 32 + self.y * 32
+					self.pins[N - i] = (px, py)
+				
+				for i in range( N ):
+					px = 32 + self.x * 32 + i*32
+					py = 32 + self.y * 32 + 32
+					self.pins[i + N + 1] = (px, py)
+
+			if self.orientation == "W":
+				self.notch = ( 32 + self.x * 32 - 16 + 4 ,  32 + self.y * 32 + 16 )
+				self.rect = ( 32 + self.x * 32 - 8 - 4, 
+						  32 + self.y * 32-16, 
+						  32*N,16 + 16 + 32 )
+				
+				for i in range( N ):
+					px = 32 + self.x * 32 + i*32
+					py = 32 + self.y * 32
+					self.pins[i + 1 + N] = (px, py)
+				
+				for i in range( N ):
+					px = 32 + self.x * 32 + i*32
+					py = 32 + self.y * 32 + 32
+					self.pins[i + 1] = (px, py)
+			
+			
+			return
+		
+		
+		# package["width"] > 2
+		
 		if self.orientation == "N":
 			self.notch = ( 32 + self.x * 32 + 32*(self.package["width"]-1)/2.0, 32 + self.y * 32 - 16 )
 			
@@ -145,6 +266,27 @@ class Part( object ):
 		
 		#pins
 		N = self.package["pins"] / 2
+		
+		#if self.package["width"] == 2:
+		#	if self.orientation == "N":
+		#		for i in range( N ):
+		#			(px,py) = self.pins[i+1]
+		#			px -= ctx.text_extents(self.part["pins"][i])[2] + 16
+		#			py += 4
+		#			ctx.move_to( px, py )
+		#			ctx.show_text( self.part["pins"][i] )
+		#			ctx.stroke()
+		#		
+		#		for i in range( N ):
+		#			continue
+		#			(px,py) = self.pins[i + 1 + N]
+		#			px -= ctx.text_extents( self.part["pins"][i+N] )[2] + 12
+		#			py += 4
+		#			ctx.move_to( px, py )
+		#			ctx.show_text( self.part["pins"][i+N] )
+		#			ctx.stroke()
+		#	return
+		
 		if self.orientation == "N":
 			for i in range( N ):
 				(px,py) = self.pins[i+1]
