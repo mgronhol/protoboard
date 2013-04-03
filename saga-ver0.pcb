@@ -1,0 +1,186 @@
+board eurocard-1
+
+# itte prossu
+part prossu ATMEGA328 50 5 S
+
+
+
+
+# kide + konkat
+part kide XTAL 56 8 W
+	wire prossu.9 kide.1
+	wire prossu.10 kide.2
+
+#konkat maihin
+	capacitor kide.1 58 9
+	capacitor kide.2 58 7
+	wire 58 9 58 7
+	wire 58 7 58 2
+
+# käyttiskisko
+wire 60 17 60 1
+
+# ftdi usb-serial header
+part ftdi FTDI-HEADER 57 15 N
+	# rx + tx
+	wire prossu.2 ftdi.3
+	wire prossu.3 ftdi.2
+
+	# reset pull-up
+	resistor prossu.1 ftdi.4
+	wire ftdi.4 60 17
+
+	# maataso
+	wire ftdi.6 58 19
+	wire 58 19 58 10
+
+# käyttöjännite
+	wire prossu.7 60 11
+
+# maa
+	wire prossu.8 58 10
+	wire 58 10 58 9
+
+
+# icsp ohjelmointi
+part icsp ICSP-HEADER 51 23 E
+#	wire icsp.1 prossu.17
+#	wire icsp.3 prossu.1
+#	wire icsp.4 prossu.19
+#	wire icsp.5 prossu.18
+part icsp-breakout HEADER-1x5 51 22 E
+	wire icsp.1 icsp-breakout.1
+	wire icsp.3 icsp-breakout.3
+	wire icsp.4 icsp-breakout.4
+	wire icsp.5 icsp-breakout.5
+#	
+	# maa
+	wire icsp.9 53 24
+	wire 53 24 58 24
+	wire 58 24 58 19
+	# resetti
+	wire icsp-breakout.3 prossu.1
+	
+	#+5v
+	wire2 icsp.10 60 23
+	wire2 60 23 60 17
+
+	# hyppylangat
+	part icsp-hyppy HEADER-1x3 49 7 N
+	wire icsp-hyppy.1 prossu.17
+	wire icsp-hyppy.2 prossu.18
+	wire icsp-hyppy.3 prossu.19
+
+
+# countterin inputti
+wire2 prossu.11 54 6
+wire 54 6 54 3
+wire 54 3 46 3
+
+# sähkökiskot
+wire 60 1 42 1
+wire 58 2 40 2
+
+
+#laskuri
+part laskuri SN75179B 40 13 N
+	# maa
+	wire2 laskuri.8 40 19
+	wire2 40 19 40 2
+	# käyttöjännite
+	wire2 laskuri.16 42 1
+
+	# ylivuotolaskuri
+	wire 46 3 39 3
+	wire 39 3 laskuri.1
+
+	#inputti
+	wire2 laskuri.10 41 18
+	wire2 41 18 41 20
+	wire 41 20 35 20
+	#wire laskuri.8 35 19
+
+	#clear
+	wire2 prossu.4 51 14
+	wire2 51 14 51 18
+	wire2 51 18 44 18
+	wire2 44 18 44 17
+	wire2 44 17 laskuri.11
+	
+	
+	#datalinjat
+	wire prossu.28 48 17
+	wire 48 17 laskuri.9
+	
+	wire prossu.27 laskuri.12
+	wire prossu.26 laskuri.13
+	wire prossu.25 laskuri.14
+	wire prossu.24 laskuri.15
+	
+	wire laskuri.7 37 18
+	wire 37 18 37 10
+	wire 37 10 43 10
+	wire 43 10 48 12
+	wire 48 12 prossu.23
+
+	
+	wire laskuri.6 38 17
+	wire 38 17 36 17
+	wire 36 17 36 8
+	wire 36 8 icsp-hyppy.3
+	
+	wire laskuri.5 38 16
+	wire 38 16 35 16
+	wire 35 16 35 7
+	wire 35 7 icsp-hyppy.2
+	
+	wire laskuri.4 38 15
+	wire 38 15 34 15
+	wire 34 15 34 6
+	wire 34 6 icsp-hyppy.1
+
+	wire laskuri.3 38 14
+	wire 38 14 33 14
+	wire 33 14 33 5
+	wire 33 5 prossu.16
+	
+	wire laskuri.2 38 13
+	wire 38 13 32 13
+	wire 32 13 32 4
+	wire 32 4 prossu.15
+
+
+# gate nandilla
+
+part gate-nand 74HCT132 25 15 N
+	
+	wire gate-nand.8 35 20
+	wire2 prossu.5 50 13
+	wire2 50 13 50 19
+	wire 50 19 41 21
+	wire 41 21 28 21
+	wire2 28 21 28 19
+	wire2 28 19 gate-nand.9
+
+	# käyttöjännite
+	wire 42 1 27 1
+	wire gate-nand.14 27 1	
+	
+	# maa
+	wire 40 2 25 2
+	wire2 gate-nand.7 25 20
+	wire2 25 20 25 2
+
+	#inputti
+	wire gate-nand.7 15 20
+	wire2 gate-nand.10 18 18
+	wire 18 18 15 18
+
+	#käyttis liittimeen
+	wire 27 1 18 1
+	wire 18 1 18 16
+	wire 18 16 15 16
+
+
+# suodatuskonkat
+capacitor 58 13 60 13
