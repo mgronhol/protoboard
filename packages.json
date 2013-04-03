@@ -49,6 +49,16 @@
 		"width": 3
 		},
 	
+	"header-1x3": {
+		"pins": 3,
+		"width": 1
+	},
+
+	"header-1x5": {
+		"pins": 5,
+		"width": 1
+	},
+	
 	"header-1x6": {
 		"pins": 6,
 		"width": 1

@@ -46,7 +46,7 @@ class Part( object ):
 				self.notch = ( 32 + self.x * 32, 32 + self.y * 32 - 16 )
 				self.rect = ( 32 + self.x * 32 - 8 - 4, 
 						  32 + self.y * 32-16, 
-						  16 + 8, 32*N*2 )
+						  16 + 8, 32*self.package["pins"] )
 				
 				for i in range( self.package["pins"] ):
 					px = 32 + self.x * 32
@@ -57,7 +57,7 @@ class Part( object ):
 				self.notch = ( 32 + self.x * 32,  32 + self.y * 32 - 16 + self.package["pins"]*32 )
 				self.rect = ( 32 + self.x * 32 - 8 - 4, 
 						  32 + self.y * 32-16, 
-						  16 + 8, 32*N*2 )
+						  16 + 8, 32*self.package["pins"] )
 				
 				for i in range( self.package["pins"] ):
 					px = 32 + self.x * 32
@@ -65,10 +65,10 @@ class Part( object ):
 					self.pins[i + 1] = (px, py)
 			
 			elif self.orientation == "E":
-				self.notch = ( 32 + self.x * 32 + 32*N*2 - 16 + 4 ,  32 + self.y * 32 )
+				self.notch = ( 32 + self.x * 32 + 32*self.package["pins"] - 16 + 4 ,  32 + self.y * 32 )
 				self.rect = ( 32 + self.x * 32 - 8 - 4, 
 						  32 + self.y * 32-16, 
-						  32*N*2,16 + 16 )
+						  32*self.package["pins"],16 + 16 )
 				
 				for i in range( self.package["pins"] ):
 					px = 32 + self.x * 32 + 32*(self.package["pins"] -  i - 1)
@@ -79,7 +79,7 @@ class Part( object ):
 				self.notch = ( 32 + self.x * 32 - 16 ,  32 + self.y * 32 )
 				self.rect = ( 32 + self.x * 32 - 8 - 8, 
 						  32 + self.y * 32-16, 
-						  32*N*2,16 + 16 )
+						  32*self.package["pins"],16 + 16 )
 				
 				for i in range( self.package["pins"] ):
 					px = 32 + self.x * 32 + 32*(self.package["pins"] -  i - 1)
@@ -481,6 +481,22 @@ for line in lines:
 		ctx.move_to( *start )
 		ctx.line_to( *stop )
 		ctx.stroke()
+
+	elif line[0] == "wire2":
+		(start, stop) = parse_line( symbols, line[1:] )
+		
+
+		# no holes when routing on the other side
+		#draw_hole( ctx, tuple( start ) )
+		#draw_hole( ctx, tuple( stop ) )
+		
+
+		#ctx.set_source_rgb( 0.8, 0.8, 1 )
+		ctx.set_source_rgba( 0, 0, 1, 0.2 )
+		ctx.move_to( *start )
+		ctx.line_to( *stop )
+		ctx.stroke()
+
 
 	elif line[0] == "resistor":
 

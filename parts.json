@@ -13,7 +13,7 @@
 		"package": "dip-28",
 		"pins": [
 			"RST", "RXD", "TXD", "PD2", "PD3", "PD4", "VCC", "GND", "PB6", "PB7", "PD5", "PD6", "PD7", "PB0",
-			"PB1", "PB2", "MOSI", "MISO", "SCK", "AVCC", "AREF", "GND", "PC0", "PC1", "PC2", "PC3", "PC4", "PC5"
+			"PB1", "PB2", "MOSI/B3", "MISO/B4", "SCK/B5", "AVCC", "AREF", "GND", "PC0", "PC1", "PC2", "PC3", "PC4", "PC5"
 		],
 		"description": "Atmel microcontroller",
 		"datasheet": ""
@@ -39,7 +39,9 @@
 	
 	"LM7805": {
 		"package": "generic-three-terminal",
-		"pins": ["INPUT", "GND", "OUTPUT" ],
+		"pins": [
+			"INPUT", "GND", "OUTPUT" 
+			],
 		"description": "5V regulator",
 		"datasheet": ""
 	},
@@ -391,7 +393,7 @@
 	"SN75179B": {
 		"package": "dip-16",
 		"pins": [
-			"QL", "QF", "QE", "QG", "QD", "QC", "QB", "GND", "QA", "CLK", "CLR", "QI", "QH", "QJ", "QK", "VCC"
+			"QL/12", "QF/6", "QE/5", "QG/7", "QD/4", "QC/3", "QB/2", "GND", "QA/1", "CLK", "CLR", "QI/9", "QH/8", "QJ/10", "QK/11", "VCC"
 			],
 		"description": "12-Bit Asynchronous counter",
 		"datasheet": ""
@@ -542,7 +544,23 @@
 		"datasheet": ""
 	},
 
+	"HEADER-1x5": {
+		"package": "header-1x5",
+		"pins": [
+			"", "", "", "", ""
+			],
+		"description": "1x5 Header",
+		"datasheet": ""
+	},
 
+	"HEADER-1x3": {
+		"package": "header-1x3",
+		"pins": [
+			"", "", ""
+			],
+		"description": "1x3 Header",
+		"datasheet": ""
+	},
 
 
 
